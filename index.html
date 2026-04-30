@@ -10,26 +10,26 @@
 <body>
 
 <nav>
-  <a href="#" class="nav-logo" data-label="nav.logo"></a>
+  <a href="#" class="nav-logo">labels.nav.logo</a>
   <ul class="nav-links">
-    <li><a href="#story" data-label="nav.story"></a></li>
-    <li><a href="#flavors" data-label="nav.flavors"></a></li>
-    <li><a href="#coming-soon" data-label="nav.coming-soon"></a></li>
-    <li><a href="https://www.instagram.com/luckybagfoods/" target="_blank" data-label="nav.instagram"></a></li>
+    <li><a href="#story">labels.nav.story</a></li>
+    <li><a href="#flavors">labels.nav.flavors</a></li>
+    <li><a href="#coming-soon">labels.nav.coming-soon</a></li>
+    <li><a href="https://www.instagram.com/luckybagfoods/" target="_blank">labels.nav.instagram</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg-text" data-label="hero.bg-text"></div>
+  <div class="hero-bg-text">labels.hero.bg-text</div>
   <div class="hero-content">
-    <p class="hero-tag" data-label="hero.tag"></p>
+    <p class="hero-tag">labels.hero.tag</p>
     <h1 class="hero-title">
-      <span data-label="hero.title.line1"></span><br>
-      <span data-label="hero.title.line2"></span> <span class="highlight" data-label="hero.title.highlight"></span>
+      <span>labels.hero.title.line1</span><br>
+      <span>labels.hero.title.line2</span> <span class="highlight">labels.hero.title.highlight</span>
     </h1>
-    <p class="hero-sub" data-label="hero.sub"></p>
-    <a href="#coming-soon" class="hero-cta" data-label="hero.cta"></a>
+    <p class="hero-sub">labels.hero.sub</p>
+    <a href="#coming-soon" class="hero-cta">labels.hero.cta</a>
   </div>
 </section>
 
@@ -38,13 +38,16 @@
 <!-- STORY -->
 <section class="story" id="story">
   <div class="story-text">
-    <span class="section-label" data-label="story.label"></span>
-    <h2 data-label="story.heading"></h2>
-    <p data-label="story.p1"></p>
-    <p data-label="story.p2"></p>
+    <span class="section-label">labels.story.label</span>
+    <h2>labels.story.heading</h2>
+    <p>labels.story.p1</p>
+    <p>labels.story.p2</p>
   </div>
   <div class="story-visual">
-    <img src="assets/product.jpg" alt="Lucky Bag ginger scallion congee">
+    <div class="story-visual-panel">
+      <img src="assets/product.jpg" alt="Lucky Bag front">
+      <img src="assets/product-back.jpg" alt="Lucky Bag back">
+    </div>
   </div>
 </section>
 
@@ -53,19 +56,19 @@
 <!-- STATS -->
 <section class="stats">
   <div class="stat-item">
-    <div class="stat-num" data-label="stat.minutes.num"></div>
-    <h3 data-label="stat.minutes.title"></h3>
-    <p data-label="stat.minutes.desc"></p>
+    <div class="stat-num">labels.stat.flavors.num</div>
+    <h3>labels.stat.flavors.title</h3>
+    <p>labels.stat.flavors.desc</p>
   </div>
   <div class="stat-item">
-    <div class="stat-num" data-label="stat.flavors.num"></div>
-    <h3 data-label="stat.flavors.title"></h3>
-    <p data-label="stat.flavors.desc"></p>
+    <div class="stat-num">labels.stat.minutes.num</div>
+    <h3>labels.stat.minutes.title</h3>
+    <p>labels.stat.minutes.desc</p>
   </div>
   <div class="stat-item">
-    <div class="stat-num" data-label="stat.compromises.num"></div>
-    <h3 data-label="stat.compromises.title"></h3>
-    <p data-label="stat.compromises.desc"></p>
+    <div class="stat-num">labels.stat.compromises.num</div>
+    <h3>labels.stat.compromises.title</h3>
+    <p>labels.stat.compromises.desc</p>
   </div>
 </section>
 
@@ -75,68 +78,70 @@
 <section class="flavors" id="flavors">
   <div class="flavors-header">
     <div>
-      <span class="section-label" data-label="flavors.label"></span>
-      <h2 data-label="flavors.heading"></h2>
+      <span class="section-label">labels.flavors.label</span>
+      <h2>labels.flavors.heading</h2>
     </div>
-    <p data-label="flavors.sub"></p>
+    <p>labels.flavors.sub</p>
   </div>
   <div class="flavors-grid">
     <div class="flavor-card">
       <svg class="flavor-smiley" viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="var(--color-ginger-scallion)"/><circle cx="23" cy="26" r="3.5" fill="#1A1A1A"/><circle cx="41" cy="26" r="3.5" fill="#1A1A1A"/><path d="M20 41 Q32 52 44 41" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/></svg>
-      <div class="flavor-name" data-label="flavor.ginger-scallion.name"></div>
-      <span class="flavor-tag launch" data-label="flavor.ginger-scallion.tag"></span>
+      <div class="flavor-name">labels.flavor.ginger-scallion.name</div>
+      <span class="flavor-tag launch">labels.flavor.ginger-scallion.tag</span>
     </div>
     <div class="flavor-card">
       <svg class="flavor-smiley" viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="var(--color-red-date-goji)"/><circle cx="23" cy="26" r="3.5" fill="#1A1A1A"/><circle cx="41" cy="26" r="3.5" fill="#1A1A1A"/><path d="M20 41 Q32 52 44 41" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/></svg>
-      <div class="flavor-name" data-label="flavor.red-date-goji.name"></div>
-      <span class="flavor-tag launch" data-label="flavor.red-date-goji.tag"></span>
+      <div class="flavor-name">labels.flavor.red-date-goji.name</div>
+      <span class="flavor-tag launch">labels.flavor.red-date-goji.tag</span>
     </div>
     <div class="flavor-card">
       <svg class="flavor-smiley" viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="var(--color-mushroom-soy)"/><circle cx="23" cy="26" r="3.5" fill="#1A1A1A"/><circle cx="41" cy="26" r="3.5" fill="#1A1A1A"/><path d="M20 41 Q32 52 44 41" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/></svg>
-      <div class="flavor-name" data-label="flavor.mushroom-soy.name"></div>
-      <span class="flavor-tag" data-label="flavor.mushroom-soy.tag"></span>
+      <div class="flavor-name">labels.flavor.mushroom-soy.name</div>
+      <span class="flavor-tag">labels.flavor.mushroom-soy.tag</span>
     </div>
     <div class="flavor-card">
       <svg class="flavor-smiley" viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="var(--color-spicy-mala)"/><circle cx="23" cy="26" r="3.5" fill="#1A1A1A"/><circle cx="41" cy="26" r="3.5" fill="#1A1A1A"/><path d="M20 41 Q32 52 44 41" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/></svg>
-      <div class="flavor-name" data-label="flavor.spicy-mala.name"></div>
-      <span class="flavor-tag" data-label="flavor.spicy-mala.tag"></span>
+      <div class="flavor-name">labels.flavor.spicy-mala.name</div>
+      <span class="flavor-tag">labels.flavor.spicy-mala.tag</span>
     </div>
     <div class="flavor-card">
       <svg class="flavor-smiley" viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="var(--color-sesame-peanut)"/><circle cx="23" cy="26" r="3.5" fill="#1A1A1A"/><circle cx="41" cy="26" r="3.5" fill="#1A1A1A"/><path d="M20 41 Q32 52 44 41" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/></svg>
-      <div class="flavor-name" data-label="flavor.sesame-peanut.name"></div>
-      <span class="flavor-tag" data-label="flavor.sesame-peanut.tag"></span>
+      <div class="flavor-name">labels.flavor.sesame-peanut.name</div>
+      <span class="flavor-tag">labels.flavor.sesame-peanut.tag</span>
     </div>
     <div class="flavor-card">
       <svg class="flavor-smiley" viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="var(--color-century-egg-pork)"/><circle cx="23" cy="26" r="3.5" fill="#1A1A1A"/><circle cx="41" cy="26" r="3.5" fill="#1A1A1A"/><path d="M20 41 Q32 52 44 41" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/></svg>
-      <div class="flavor-name" data-label="flavor.century-egg-pork.name"></div>
-      <span class="flavor-tag" data-label="flavor.century-egg-pork.tag"></span>
+      <div class="flavor-name">labels.flavor.century-egg-pork.name</div>
+      <span class="flavor-tag">labels.flavor.century-egg-pork.tag</span>
     </div>
   </div>
 </section>
 
 <!-- COMING SOON -->
 <section class="coming-soon" id="coming-soon">
-  <span class="section-label" data-label="soon.label"></span>
+  <span class="section-label">labels.soon.label</span>
   <h2>
-    <span data-label="soon.heading.main"></span><br>
-    <span class="highlight" data-label="soon.heading.highlight"></span>
+    <span>labels.soon.heading.main</span><br>
+    <span class="highlight">labels.soon.heading.highlight</span>
   </h2>
-  <p data-label="soon.sub"></p>
+  <p>labels.soon.sub</p>
   <div class="progress-track">
     <div class="progress-step">
-      <span class="step-label active" data-label="step.recipe"></span>
+      <span class="step-label active">labels.step.recipe</span>
       <div class="step-line"></div>
     </div>
     <div class="progress-step">
-      <span class="step-label" data-label="step.prototype"></span>
+      <span class="step-label">labels.step.prototype</span>
       <div class="step-line"></div>
     </div>
     <div class="progress-step">
-      <span class="step-label" data-label="step.packaging"></span>
+      <span class="step-label">labels.step.packaging</span>
       <div class="step-line"></div>
     </div>
-    <span class="step-label" data-label="step.launch"></span>
+    <span class="step-label">labels.step.launch</span>
   </div>
+
+
   <form
     class="email-form"
     id="waitlist-form"
@@ -147,34 +152,26 @@
     <input
       type="email"
       name="entry.1924272540"
-      data-label="form.placeholder"
-      data-label-attr="placeholder"
+      placeholder="labels.form.placeholder"
       required
     />
-    <button type="submit" data-label="form.button"></button>
+    <button type="submit">labels.form.button</button>
   </form>
-  <p class="form-error" id="form-error" data-label="form.error"></p>
+  <p class="form-error" id="form-error">labels.form.error</p>
   <div class="form-success" id="form-success">
-    <p data-label="form.success"></p>
+    <p>labels.form.success</p>
   </div>
 
-  <a href="https://www.instagram.com/luckybagfoods/" target="_blank" class="ig-link">
-    <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="2" y="2" width="20" height="20" rx="5"/>
-      <circle cx="12" cy="12" r="4"/>
-      <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
-    </svg>
-    <span data-label="form.ig"></span>
-  </a>
+
 </section>
 
 <footer>
-  <a href="#" class="nav-logo" data-label="footer.logo"></a>
+  <a href="#" class="nav-logo">labels.footer.logo</a>
   <div class="footer-links">
-    <a href="https://www.instagram.com/luckybagfoods/" target="_blank" data-label="footer.instagram"></a>
-    <a href="mailto:hello@luckybagfoods.com" data-label="footer.email"></a>
+    <a href="https://www.instagram.com/luckybagfoods/" target="_blank">labels.footer.instagram</a>
+    <a href="mailto:hello@luckybagfoods.com">labels.footer.email</a>
   </div>
-  <span class="footer-copy" data-label="footer.copy"></span>
+  <span class="footer-copy">labels.footer.copy</span>
 </footer>
 
 <script src="script.js"></script>
