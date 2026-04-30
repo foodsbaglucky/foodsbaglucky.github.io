@@ -65,4 +65,8 @@ function handleSubmit(e) {
   });
 }
 
+document.querySelectorAll('[data-e]').forEach(el => {
+  el.href = 'mailto:' + atob(el.dataset.e);
+});
+
 loadLabels().catch(err => console.error('loadLabels failed:', err));
