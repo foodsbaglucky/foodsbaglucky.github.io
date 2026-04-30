@@ -3,7 +3,7 @@
 :root {
   --yellow: #F9E869;
   --yellow-light: #FEFCE6;
-  --yellow-dark: #E8C030;
+  --yellow-dark: #F1D64F;
   --off-white: #FAFAF8;
   --cream: #F4F2EC;
   --dark: #2C2C2A;
@@ -40,6 +40,17 @@ nav {
   letter-spacing: 0.3px;
   color: var(--dark);
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 .nav-links {
@@ -74,7 +85,7 @@ nav {
   position: absolute;
   font-size: clamp(140px, 24vw, 260px);
   font-weight: 500;
-  color: #F5E8E8;
+  color: #F1D9D9;
   letter-spacing: -4px;
   top: 50%;
   left: 50%;
@@ -168,6 +179,7 @@ nav {
   line-height: 1.15;
   margin-bottom: 28px;
   letter-spacing: -0.5px;
+  max-width: 380px;
 }
 
 .story-text p {
