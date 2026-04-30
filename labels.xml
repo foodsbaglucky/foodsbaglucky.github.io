@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<labels>
+
+  <!-- Navigation -->
+  <label id="nav.logo">lucky bag</label>
+  <label id="nav.story">our story</label>
+  <label id="nav.flavors">flavors</label>
+  <label id="nav.coming-soon">coming soon</label>
+  <label id="nav.instagram">instagram</label>
+
+  <!-- Hero -->
+  <label id="hero.bg-text">lucky</label>
+  <label id="hero.tag">lucky bag trail foods</label>
+  <label id="hero.title.line1">warmth</label>
+  <label id="hero.title.line2">you can</label>
+  <label id="hero.title.highlight">carry</label>
+  <label id="hero.sub">Chinese-inspired dehydrated trail meals. Just add boiling water.</label>
+  <label id="hero.cta">coming soon ↓</label>
+
+  <!-- Story -->
+  <label id="story.label">our story</label>
+  <label id="story.heading">Every trail meal I've ever packed tasted like someone else's kitchen</label>
+  <label id="story.p1">Before the restaurant doors opened every morning, my family ate congee. Simple rice, ginger, whatever was on hand. It was the meal that started every day. Quiet, warm, restorative.</label>
+  <label id="story.p2">Years later, I kept thinking about that bowl. Nothing in the trail food aisle came close. So I made it portable. Lucky Bag is that morning bowl, made for wherever your day takes you.</label>
+
+  <!-- Stats -->
+  <label id="stat.minutes.num">5</label>
+  <label id="stat.minutes.title">minutes</label>
+  <label id="stat.minutes.desc">Boil water, pour into the pouch, wait five minutes. Hot, satisfying, real food at camp or on the trail.</label>
+  <label id="stat.flavors.num">6</label>
+  <label id="stat.flavors.title">flavors</label>
+  <label id="stat.flavors.desc">From ginger &amp; scallion to century egg &amp; pork, each flavor is rooted in a Chinese culinary tradition.</label>
+  <label id="stat.compromises.num">0</label>
+  <label id="stat.compromises.title">compromises</label>
+  <label id="stat.compromises.desc">You shouldn't have to choose between hitting the trail and eating food that feels like yours.</label>
+
+  <!-- Flavors section -->
+  <label id="flavors.label">the lineup</label>
+  <label id="flavors.heading">Six flavors. All congee.</label>
+  <label id="flavors.sub">Each pouch is a different Chinese flavor tradition, color coded so you always grab the right one.</label>
+
+  <!-- Flavor colors -->
+  <label id="color.ginger-scallion">#F9E869</label>
+  <label id="color.red-date-goji">#D75959</label>
+  <label id="color.mushroom-soy">#805E3D</label>
+  <label id="color.spicy-mala">#E28C5B</label>
+  <label id="color.sesame-peanut">#C8A87A</label>
+  <label id="color.century-egg-pork">#889D81</label>
+
+  <!-- Flavor cards -->
+  <label id="flavor.ginger-scallion.name">ginger &amp; scallion</label>
+  <label id="flavor.ginger-scallion.tag">launching first</label>
+  <label id="flavor.red-date-goji.name">red date &amp; goji</label>
+  <label id="flavor.red-date-goji.tag">launching first</label>
+  <label id="flavor.mushroom-soy.name">mushroom &amp; soy</label>
+  <label id="flavor.mushroom-soy.tag">coming soon</label>
+  <label id="flavor.spicy-mala.name">spicy mala</label>
+  <label id="flavor.spicy-mala.tag">coming soon</label>
+  <label id="flavor.sesame-peanut.name">sesame peanut</label>
+  <label id="flavor.sesame-peanut.tag">coming soon</label>
+  <label id="flavor.century-egg-pork.name">century egg &amp; pork</label>
+  <label id="flavor.century-egg-pork.tag">coming soon</label>
+
+  <!-- Coming soon -->
+  <label id="soon.label">coming soon</label>
+  <label id="soon.heading.main">Real food.</label>
+  <label id="soon.heading.highlight">Real soon.</label>
+  <label id="soon.sub">We're in the kitchen. Follow along on Instagram for updates, behind the scenes, and first access when we launch.</label>
+
+  <!-- Progress steps -->
+  <label id="step.recipe">recipe testing</label>
+  <label id="step.prototype">prototype</label>
+  <label id="step.packaging">packaging</label>
+  <label id="step.launch">launch</label>
+
+  <!-- Form -->
+  <label id="form.placeholder">your@email.com</label>
+  <label id="form.button">join the list</label>
+  <label id="form.error">please enter a valid email address</label>
+  <label id="form.success">you're on the list. we'll be in touch soon.</label>
+  <label id="form.ig">follow @luckybagfoods</label>
+
+  <!-- Footer -->
+  <label id="footer.logo">lucky bag</label>
+  <label id="footer.instagram">instagram</label>
+  <label id="footer.email">hello@luckybagfoods.com</label>
+  <label id="footer.copy">© 2026 Lucky Bag Foods</label>
+
+</labels>
