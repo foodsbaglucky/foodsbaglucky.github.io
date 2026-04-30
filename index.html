@@ -666,7 +666,6 @@
     id="waitlist-form"
     action="https://docs.google.com/forms/d/e/16mp0-kljsMdAjAqm9atYaOQcDujasX-ObqfvXk52Bq0/formResponse"
     method="POST"
-    target="hidden-iframe"
     onsubmit="handleSubmit(event)"
   >
     <input
@@ -682,7 +681,6 @@
   <div class="form-success" id="form-success">
     <p>you're on the list. we'll be in touch soon.</p>
   </div>
-  <iframe name="hidden-iframe" style="display:none;"></iframe>
 
   <a href="https://www.instagram.com/luckybagfoods/" target="_blank" class="ig-link">
     <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -694,25 +692,35 @@
   </a>
 
   <script>
-    function handleSubmit(e) {
-      const input = document.querySelector('#waitlist-form input[type="email"]');
-      const error = document.getElementById('form-error');
-      const success = document.getElementById('form-success');
-      const form = document.getElementById('waitlist-form');
-
-      if (!input.value || !input.value.includes('@')) {
-        e.preventDefault();
-        error.style.display = 'block';
-        return;
-      }
-
-      error.style.display = 'none';
-
-      setTimeout(() => {
-        form.style.display = 'none';
-        success.style.display = 'block';
-      }, 500);
-    }
+   function handleSubmit(e) {
+     e.preventDefault();
+   
+     const form = document.getElementById('waitlist-form');
+     const input = form.querySelector('input[type="email"]');
+     const error = document.getElementById('form-error');
+     const success = document.getElementById('form-success');
+   
+     if (!input.value || !input.value.includes('@')) {
+       error.style.display = 'block';
+       return;
+     }
+   
+     error.style.display = 'none';
+   
+     const formData = new FormData(form);
+   
+     fetch(form.action, {
+       method: 'POST',
+       mode: 'no-cors',
+       body: formData
+     }).then(() => {
+       form.style.display = 'none';
+       success.style.display = 'block';
+     }).catch(() => {
+       form.style.display = 'none';
+       success.style.display = 'block';
+     });
+   }
   </script>
 </section>
  
