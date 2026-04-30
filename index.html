@@ -591,6 +591,30 @@
     </div>
     <span class="step-label">launch</span>
   </div>
+ <!-- REPLACE action URL and entry ID with yours from Google Forms -->
+  <form
+    class="email-form"
+    id="waitlist-form"
+    action="https://docs.google.com/forms/d/e/16mp0-kljsMdAjAqm9atYaOQcDujasX-ObqfvXk52Bq0/formResponse"
+    method="POST"
+    target="hidden-iframe"
+    onsubmit="handleSubmit(event)"
+  >
+    <input
+      type="email"
+      name="entry.1924272540"
+      placeholder="your@email.com"
+      required
+      autocomplete="email"
+    />
+    <button type="submit">join the list</button>
+  </form>
+  <p class="form-error" id="form-error">please enter a valid email address</p>
+  <div class="form-success" id="form-success">
+    <p>you're on the list. we'll be in touch soon.</p>
+  </div>
+  <iframe name="hidden-iframe" style="display:none;"></iframe>
+
   <a href="https://www.instagram.com/luckybagfoods/" target="_blank" class="ig-link">
     <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
       <rect x="2" y="2" width="20" height="20" rx="5"/>
@@ -599,8 +623,30 @@
     </svg>
     follow @luckybagfoods
   </a>
-</section>
 
+  <script>
+    function handleSubmit(e) {
+      const input = document.querySelector('#waitlist-form input[type="email"]');
+      const error = document.getElementById('form-error');
+      const success = document.getElementById('form-success');
+      const form = document.getElementById('waitlist-form');
+
+      if (!input.value || !input.value.includes('@')) {
+        e.preventDefault();
+        error.style.display = 'block';
+        return;
+      }
+
+      error.style.display = 'none';
+
+      setTimeout(() => {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      }, 500);
+    }
+  </script>
+</section>
+ 
 <footer>
   <a href="#" class="nav-logo">lucky bag</a>
   <div class="footer-links">
