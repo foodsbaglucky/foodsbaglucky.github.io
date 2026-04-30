@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucky Bag Trail Foods</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --yellow: #E8C84A;
+    --yellow-light: #FDF6D8;
+    --yellow-dark: #C8A830;
+    --off-white: #FAFAF8;
+    --cream: #F4F2EC;
+    --dark: #2C2C2A;
+    --mid: #888780;
+    --light: #DEDAD2;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--dark);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 48px;
+    border-bottom: 0.5px solid var(--light);
+  }
+
+  .nav-logo {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    color: var(--dark);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    color: var(--mid);
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--dark); }
+
+  /* HERO */
+  .hero {
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-tag {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--mid);
+    margin-bottom: 28px;
+    text-transform: uppercase;
+  }
+
+  .hero-title {
+    font-size: clamp(52px, 10vw, 96px);
+    font-weight: 500;
+    letter-spacing: -1px;
+    line-height: 1.05;
+    margin-bottom: 28px;
+    color: var(--dark);
+  }
+
+  .hero-title span {
+    color: var(--yellow-dark);
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--mid);
+    max-width: 480px;
+    line-height: 1.65;
+    margin-bottom: 48px;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--dark);
+    color: var(--off-white);
+    padding: 14px 28px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: background 0.2s;
+  }
+
+  .hero-cta:hover { background: #444441; }
+
+  .hero-bg-text {
+    position: absolute;
+    font-size: clamp(120px, 22vw, 220px);
+    font-weight: 500;
+    color: var(--yellow-light);
+    letter-spacing: -4px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 0.5px;
+    background: var(--light);
+    margin: 0 48px;
+  }
+
+  /* STORY */
+  .story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    min-height: 560px;
+  }
+
+  .story-text {
+    padding: 80px 64px 80px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 0.5px solid var(--light);
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--mid);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .story-text h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+  }
+
+  .story-text p {
+    font-size: 16px;
+    color: var(--mid);
+    line-height: 1.75;
+    max-width: 420px;
+  }
+
+  .story-text p + p { margin-top: 16px; }
+
+  .story-visual {
+    background: var(--yellow-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 48px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* simple pouch illustration */
+  .pouch-row {
+    display: flex;
+    gap: 16px;
+    align-items: flex-end;
+  }
+
+  .pouch {
+    background: var(--off-white);
+    border: 0.5px solid var(--light);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px 16px 16px;
+    position: relative;
+  }
+
+  .pouch-lg { width: 100px; height: 140px; }
+  .pouch-sm { width: 80px; height: 112px; }
+
+  .pouch-dot {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+  }
+
+  .pouch-sm .pouch-dot { width: 34px; height: 34px; }
+
+  .pouch-name {
+    font-size: 9px;
+    color: var(--mid);
+    text-align: center;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+  }
+
+  .pouch-brand {
+    position: absolute;
+    top: 9px;
+    font-size: 8px;
+    font-weight: 500;
+    color: var(--dark);
+    letter-spacing: 0.3px;
+  }
+
+  .visual-label {
+    font-size: 11px;
+    color: var(--mid);
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  /* FLAVORS */
+  .flavors {
+    padding: 80px 48px;
+    background: var(--cream);
+  }
+
+  .flavors-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .flavors-header h2 {
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 500;
+    letter-spacing: -0.5px;
+  }
+
+  .flavors-header p {
+    font-size: 14px;
+    color: var(--mid);
+    max-width: 280px;
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  .flavors-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+  }
+
+  .flavor-card {
+    background: var(--off-white);
+    border: 0.5px solid var(--light);
+    border-radius: 12px;
+    padding: 24px 16px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .flavor-circle {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+  }
+
+  .flavor-name {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--dark);
+    line-height: 1.4;
+  }
+
+  .flavor-tag {
+    font-size: 10px;
+    color: var(--mid);
+    letter-spacing: 0.5px;
+  }
+
+  /* COMING SOON */
+  .coming-soon {
+    padding: 100px 48px;
+    text-align: center;
+    background: var(--dark);
+    color: var(--off-white);
+  }
+
+  .coming-soon .section-label { color: var(--yellow); margin-bottom: 20px; }
+
+  .coming-soon h2 {
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 500;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+    line-height: 1.1;
+  }
+
+  .coming-soon h2 span { color: var(--yellow); }
+
+  .coming-soon p {
+    font-size: 16px;
+    color: #888780;
+    max-width: 420px;
+    margin: 0 auto 48px;
+    line-height: 1.7;
+  }
+
+  .soon-tags {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 56px;
+  }
+
+  .soon-tag {
+    border: 0.5px solid #444441;
+    border-radius: 100px;
+    padding: 8px 20px;
+    font-size: 13px;
+    color: #888780;
+    letter-spacing: 0.3px;
+  }
+
+  .soon-tag.active {
+    border-color: var(--yellow);
+    color: var(--yellow);
+  }
+
+  .ig-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--off-white);
+    color: var(--dark);
+    padding: 14px 28px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .ig-link:hover { background: var(--cream); }
+
+  .ig-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  /* WHY */
+  .why {
+    padding: 80px 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 0.5px solid var(--light);
+  }
+
+  .why-item {
+    padding: 48px 40px;
+    border-right: 0.5px solid var(--light);
+  }
+
+  .why-item:last-child { border-right: none; }
+
+  .why-num {
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--yellow-dark);
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+    line-height: 1;
+  }
+
+  .why-item h3 {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .why-item p {
+    font-size: 14px;
+    color: var(--mid);
+    line-height: 1.7;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 32px 48px;
+    border-top: 0.5px solid var(--light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  footer .nav-logo { font-size: 15px; }
+
+  .footer-right {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .footer-right a {
+    font-size: 13px;
+    color: var(--mid);
+    text-decoration: none;
+  }
+
+  .footer-right a:hover { color: var(--dark); }
+
+  .footer-copy {
+    font-size: 12px;
+    color: var(--light);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 20px 24px; }
+    .nav-links { display: none; }
+    .story { grid-template-columns: 1fr; }
+    .story-text { padding: 56px 24px; border-right: none; border-bottom: 0.5px solid var(--light); }
+    .story-visual { padding: 56px 24px; }
+    .flavors { padding: 56px 24px; }
+    .flavors-grid { grid-template-columns: repeat(3, 1fr); }
+    .flavors-header p { text-align: left; }
+    .why { grid-template-columns: 1fr; padding: 0; }
+    .why-item { border-right: none; border-bottom: 0.5px solid var(--light); padding: 40px 24px; }
+    .coming-soon { padding: 72px 24px; }
+    footer { padding: 24px; flex-direction: column; align-items: flex-start; }
+    .divider { margin: 0 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">lucky bag</a>
+  <ul class="nav-links">
+    <li><a href="#story">our story</a></li>
+    <li><a href="#flavors">flavors</a></li>
+    <li><a href="#coming-soon">coming soon</a></li>
+    <li><a href="https://www.instagram.com/luckybagfoods/" target="_blank">instagram</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-text">lucky</div>
+  <p class="hero-tag">trail foods</p>
+  <h1 class="hero-title">food that<br>feels like <span>home</span></h1>
+  <p class="hero-sub">Chinese-inspired dehydrated trail meals. Just add boiling water.</p>
+  <a href="#coming-soon" class="hero-cta">coming soon &darr;</a>
+</section>
+
+<div class="divider"></div>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="story-text">
+    <p class="section-label">our story</p>
+    <h2>The trail food aisle never looked like my lunchbox.</h2>
+    <p>Growing up in my family's Chinese restaurant, the best meals came out of white takeout boxes before the doors even opened. Staff meal. Real food. The kind that warms you from the inside out.</p>
+    <p>As a trail runner, snowboarder, and camper, I kept looking for that feeling outside. I never found it. So I made it. Lucky Bag is Chinese comfort food for the trail — starting with congee.</p>
+  </div>
+  <div class="story-visual">
+    <div class="pouch-row">
+      <div class="pouch pouch-sm">
+        <span class="pouch-brand">lucky bag</span>
+        <div class="pouch-dot" style="background:#B84040;"></div>
+        <div class="pouch-name">red date<br>& goji</div>
+      </div>
+      <div class="pouch pouch-lg">
+        <span class="pouch-brand">lucky bag</span>
+        <div class="pouch-dot" style="background:#E8C84A;"></div>
+        <div class="pouch-name">ginger &<br>scallion</div>
+      </div>
+      <div class="pouch pouch-sm">
+        <span class="pouch-brand">lucky bag</span>
+        <div class="pouch-dot" style="background:#C8632A;"></div>
+        <div class="pouch-name">spicy<br>mala</div>
+      </div>
+    </div>
+    <p class="visual-label">congee · just add boiling water</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHY -->
+<section class="why">
+  <div class="why-item">
+    <div class="why-num">5</div>
+    <h3>minutes</h3>
+    <p>Boil water, pour into the pouch, wait five minutes. Hot, satisfying, real food at camp or on trail.</p>
+  </div>
+  <div class="why-item">
+    <div class="why-num">6</div>
+    <h3>flavors</h3>
+    <p>From ginger & scallion to spicy mala, each flavor is rooted in a Chinese culinary tradition.</p>
+  </div>
+  <div class="why-item">
+    <div class="why-num">0</div>
+    <h3>compromises</h3>
+    <p>You shouldn't have to choose between hitting the trail and eating food that feels like yours.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FLAVORS -->
+<section class="flavors" id="flavors">
+  <div class="flavors-header">
+    <div>
+      <p class="section-label">the lineup</p>
+      <h2>Six flavors.<br>All congee.</h2>
+    </div>
+    <p>Each pouch is a different Chinese flavor tradition — color coded so you always grab the right one.</p>
+  </div>
+  <div class="flavors-grid">
+    <div class="flavor-card">
+      <svg class="flavor-circle" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="32" fill="#E8C84A"/>
+        <circle cx="23" cy="26" r="3.5" fill="#1A1A1A"/>
+        <circle cx="41" cy="26" r="3.5" fill="#1A1A1A"/>
+        <path d="M22 38 Q32 47 42 38" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <div class="flavor-name">ginger & scallion</div>
+      <div class="flavor-tag">launching first</div>
+    </div>
+    <div class="flavor-card">
+      <svg class="flavor-circle" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="32" fill="#B84040"/>
+        <circle cx="23" cy="26" r="3.5" fill="#1A1A1A"/>
+        <circle cx="41" cy="26" r="3.5" fill="#1A1A1A"/>
+        <path d="M22 38 Q32 47 42 38" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <div class="flavor-name">red date & goji</div>
+      <div class="flavor-tag">launching first</div>
+    </div>
+    <div class="flavor-card">
+      <svg class="flavor-circle" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="32" fill="#6B4A2A"/>
+        <circle cx="23" cy="26" r="3.5" fill="#1A1A1A"/>
+        <circle cx="41" cy="26" r="3.5" fill="#1A1A1A"/>
+        <path d="M22 38 Q32 47 42 38" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <div class="flavor-name">mushroom & soy</div>
+      <div class="flavor-tag">coming soon</div>
+    </div>
+    <div class="flavor-card">
+      <svg class="flavor-circle" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="32" fill="#C8632A"/>
+        <circle cx="23" cy="26" r="3.5" fill="#1A1A1A"/>
+        <circle cx="41" cy="26" r="3.5" fill="#1A1A1A"/>
+        <path d="M22 38 Q32 47 42 38" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <div class="flavor-name">spicy mala</div>
+      <div class="flavor-tag">coming soon</div>
+    </div>
+    <div class="flavor-card">
+      <svg class="flavor-circle" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="32" fill="#C8A87A"/>
+        <circle cx="23" cy="26" r="3.5" fill="#1A1A1A"/>
+        <circle cx="41" cy="26" r="3.5" fill="#1A1A1A"/>
+        <path d="M22 38 Q32 47 42 38" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <div class="flavor-name">sesame peanut</div>
+      <div class="flavor-tag">coming soon</div>
+    </div>
+    <div class="flavor-card">
+      <svg class="flavor-circle" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="32" fill="#7A8C74"/>
+        <circle cx="23" cy="26" r="3.5" fill="#1A1A1A"/>
+        <circle cx="41" cy="26" r="3.5" fill="#1A1A1A"/>
+        <path d="M22 38 Q32 47 42 38" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <div class="flavor-name">century egg & pork</div>
+      <div class="flavor-tag">coming soon</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMING SOON -->
+<section class="coming-soon" id="coming-soon">
+  <p class="section-label">coming soon</p>
+  <h2>Real food.<br><span>Real soon.</span></h2>
+  <p>We're in the kitchen. Follow along on Instagram for updates, behind the scenes, and first access when we launch.</p>
+  <div class="soon-tags">
+    <span class="soon-tag active">recipe testing</span>
+    <span class="soon-tag">prototype</span>
+    <span class="soon-tag">packaging</span>
+    <span class="soon-tag">launch</span>
+  </div>
+  <a href="https://www.instagram.com/luckybagfoods/" target="_blank" class="ig-link">
+    <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5"/>
+      <circle cx="12" cy="12" r="4"/>
+      <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+    </svg>
+    follow @luckybagfoods
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="nav-logo">lucky bag</a>
+  <div class="footer-right">
+    <a href="https://www.instagram.com/luckybagfoods/" target="_blank">instagram</a>
+    <a href="mailto:christine@luckybagfoods.com">christine@luckybagfoods.com</a>
+  </div>
+  <span class="footer-copy">© 2026 Lucky Bag Foods</span>
+</footer>
+
+</body>
+</html>
