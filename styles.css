@@ -179,14 +179,12 @@ nav {
   line-height: 1.15;
   margin-bottom: 28px;
   letter-spacing: -0.5px;
-  max-width: 380px;
 }
 
 .story-text p {
   font-size: clamp(14px, 1.1vw, 16px);
   color: var(--mid);
   line-height: 1.8;
-  max-width: 440px;
 }
 
 .story-text p + p { margin-top: 18px; }
