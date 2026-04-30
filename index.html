@@ -372,6 +372,7 @@
     gap: 0;
     margin-bottom: 64px;
     flex-wrap: wrap;
+    row-gap: 12px;
   }
 
   .progress-step {
@@ -533,6 +534,27 @@
     .flavors-grid { grid-template-columns: repeat(3, 1fr); }
     .coming-soon { padding: 80px 24px; }
     footer { padding: 24px; flex-direction: column; align-items: flex-start; }
+
+    .progress-track {
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .step-line {
+      width: 0.5px;
+      height: 20px;
+      background: #444441;
+    }
+    
+    .progress-step {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .step-label {
+      text-align: center;
+    }
   }
 </style>
 </head>
