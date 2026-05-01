@@ -8,6 +8,7 @@
   --cream: #F4F2EC;
   --dark: #2C2C2A;
   --mid: #888780;
+  --muted: #B8B5AE;
   --light: #DEDAD2;
 }
 
@@ -146,6 +147,14 @@ nav {
 }
 
 .hero-cta:hover { background: #444441; }
+
+.hero-badges {
+  margin-top: 56px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
 
 /* SECTION SHARED */
 .section-label {
